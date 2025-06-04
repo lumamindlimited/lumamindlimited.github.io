@@ -1,28 +1,33 @@
 /* General Styles */
 body {
-    padding-top: 56px; /* Height of the fixed navbar */
+    /* padding-top: 56px; /* <--- 移除這一行 */
     font-family: 'Noto Sans HK', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
 }
 
-section {
-    scroll-margin-top: 56px; /* Offset for fixed navbar when scrolling to sections */
+/* UPDATED: Adjust scroll margin for all sections and the home header to ensure visibility below fixed navbar */
+header#home, section[id] { 
+    scroll-margin-top: 70px; /* Or a value that matches your navbar height + desired offset */
 }
 
-/* Hero Section */
+/* Hero Section - UPDATED */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3VsdGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1400&q=80') no-repeat center center;
     background-size: cover;
-    min-height: 80vh; /* Make hero section take more viewport height */
+    min-height: 80vh; 
     color: #fff;
+    padding-top: 76px; /* NEW: Navbar height (approx 56px) + extra visual buffer (20px) */
+    padding-bottom: 40px; /* NEW: Added for balance */
+    box-sizing: border-box; /* NEW: Ensures padding is included in min-height calculation correctly */
+    /* d-flex, align-items-center, justify-content-center, text-center are applied via class in HTML */
 }
 
 .hero-section h1 {
     font-weight: bold;
-    font-size: 3.5rem; /* Larger heading */
+    font-size: 3.5rem; 
 }
 
 .hero-section .lead {
-    font-size: 1.5rem; /* Larger lead text */
+    font-size: 1.5rem; 
     margin-bottom: 1.5rem;
 }
 
@@ -37,12 +42,12 @@ section {
 }
 
 #services .card-title {
-    color: #0d6efd; /* Bootstrap primary color */
+    color: #0d6efd; 
     font-weight: bold;
 }
 
 #services .list-group-item {
-    background-color: transparent; /* Make list items blend better */
+    background-color: transparent; 
     border-bottom: 1px solid rgba(0,0,0,.08);
 }
 #services .list-group-item:last-child {
@@ -53,45 +58,12 @@ section {
 #clients .client-logo {
     border: 1px solid #eee;
     border-radius: 8px;
-    background-color: #f8f9fa; /* Light background for client boxes */
-    min-height: 150px; /* Ensure consistent height */
+    background-color: #f8f9fa; 
+    min-height: 150px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 #clients .client-logo h4 {
-    color: #343a40; /* Dark grey for client names */
-    font-weight: bold;
-}
-
-
-/* Contact Section */
-#contact a {
-    color: #0d6efd;
-    text-decoration: none;
-}
-#contact a:hover {
-    text-decoration: underline;
-}
-#contact .bi {
-    margin-right: 8px;
-}
-
-
-/* Footer */
-footer p {
-    margin-bottom: 0;
-}
-
-/* Responsive adjustments if needed */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    .hero-section .lead {
-        font-size: 1.2rem;
-    }
-    #services .col-lg-3 { /* Ensure cards stack nicely on smaller screens */
-        margin-bottom: 1.5rem;
-    }
-}
+    color: #343a40; 
+    font-weight
