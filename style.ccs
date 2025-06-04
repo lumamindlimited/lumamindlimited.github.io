@@ -9,16 +9,23 @@ header#home, section[id] {
     scroll-margin-top: 70px; /* Or a value that matches your navbar height + desired offset */
 }
 
-/* Hero Section - UPDATED */
+/* Hero Section - UPDATED for better text contrast */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3VsdGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1400&q=80') no-repeat center center;
+    /* 將 rgba(0, 0, 0, 0.6) 中的 0.6 改為 0.75 或 0.8，讓遮罩更暗 */
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3VsdGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1400&q=80') no-repeat center center;
     background-size: cover;
-    min-height: 80vh; 
-    color: #fff;
-    padding-top: 76px; /* NEW: Navbar height (approx 56px) + extra visual buffer (20px) */
-    padding-bottom: 40px; /* NEW: Added for balance */
-    box-sizing: border-box; /* NEW: Ensures padding is included in min-height calculation correctly */
-    /* d-flex, align-items-center, justify-content-center, text-center are applied via class in HTML */
+    min-height: 80vh;
+    color: #fff !important; /* 強制設定文字顏色為白色，並確保其優先級 */
+    
+    /* 以下 padding 根據您是否採用 sticky-top 導航欄或其他情況調整 */
+    /* 若採用 sticky-top 方案後的 padding: */
+    padding-top: 40px; 
+    padding-bottom: 40px;
+    /* 若之前解決導航欄遮擋問題採用的是給 hero-section 較大 padding-top 的方案，則用那個值，例如: */
+    /* padding-top: 76px; */
+
+    box-sizing: border-box;
+    /* d-flex, align-items-center, justify-content-center, text-center class 在 HTML 中已應用 */
 }
 
 .hero-section h1 {
